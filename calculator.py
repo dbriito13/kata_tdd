@@ -1,26 +1,5 @@
 import re
 
-def calculator(input_number):
-	if input_number == "":
-		return 0;
-
-	#If the first two characters are // then we will define a new delimiter:
-	if input_number[:2] == '//' and isnumber(input_number[3])==True:
-		return onechar_delimiter(input_number);
-
-	if input_number[:2] == '//' and isnumber(input_number[3]) == False:
-		return str_delimiter(input_number);
-
-	if input_number[:2] == '//' and input_number[3] == '[':
-		return various_delimiters(input_number);
-
-	#If not, it means the only delimiters are , and \n
-	if ',' in input_number or '\n' in input_number:
-		return normal_delimiter(input_number);
-
-	else:
-		if check_negative(input_number) == False:
-			return int(input_number)
 
 #Auxiliary function to check if a character is a number or not
 def isnumber(char):
