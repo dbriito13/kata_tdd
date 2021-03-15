@@ -23,3 +23,8 @@ jobs:
     - name: Test with unittest
       run: |
         python3 test_calculator.py
+
+  result:
+    needs: build
+  - name: Printing result
+    run: echo "The new file passed all the specified tests! :)"
