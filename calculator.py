@@ -1,6 +1,6 @@
 import re
 
-
+#Function calculator
 def calculator(input_number):
 	if input_number == "":
 		return 0;
