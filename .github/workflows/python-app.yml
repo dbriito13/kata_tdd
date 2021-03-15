@@ -27,4 +27,5 @@ jobs:
   result:
     needs: build
   - name: Printing result
-    run: echo "The new file passed all the specified tests! :)"
+    run: |
+      echo "The new file passed all the specified tests! :)"
