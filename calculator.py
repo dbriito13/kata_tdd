@@ -8,11 +8,11 @@ def calculator(input_number):
 	if input_number[:2] == '//' and isnumber(input_number[3])==True:
 		return onechar_delimiter(input_number);
 
-	if input_number[:2] == '//' and isnumber(input_number[3]) == False:
-		return str_delimiter(input_number);
-
 	if input_number[:2] == '//' and input_number[3] == '[':
 		return various_delimiters(input_number);
+
+	if input_number[:2] == '//' and isnumber(input_number[3]) == False:
+		return str_delimiter(input_number);
 
 	#If not, it means the only delimiters are , and \n
 	if ',' in input_number or '\n' in input_number:
