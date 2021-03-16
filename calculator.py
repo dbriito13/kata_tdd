@@ -98,5 +98,3 @@ def check_overthousand(numbers):
 		if int(number) <= 1000:
 			new_numbers.append(int(number));
 	return new_numbers;
-
-print(various_delimiters("//[!][###]12!3,2###1"))
