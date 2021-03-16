@@ -77,7 +77,6 @@ def various_delimiters(input_number):
 
 	#Now we separate using ][
 	delimiter_list = delimiter_list.split('][');
-	print(delimiter_list)
 
 	#Now we build the concatenation of all our delimiters
 	delimiters = ''

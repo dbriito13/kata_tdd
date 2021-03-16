@@ -1,6 +1,7 @@
 import calculator as c
 import unittest
 
+#Unittest class
 class test_calculator(unittest.TestCase):
 
 	#An empty string returns zero
