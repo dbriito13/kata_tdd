@@ -1,5 +1,7 @@
 import re
 
+##Calculator function decides which case we have, 1 number, 2 numbers, delimiters defined by the user and redirects to the corresponding
+## auxiliary function
 def calculator(input_number):
 	if input_number == "":
 		return 0;
@@ -26,6 +28,8 @@ def calculator(input_number):
 def isnumber(char):
 	return (char >= '0' and char <= '9');
 
+#This function takes care of the case in which the user defines a delimiter of more than 1 char like
+# //###... 
 def str_delimiter(input_number):
 	input_number = input_number[2:]
 	#Now let's extract the delimiter, which are all the characters until we find a number
@@ -44,6 +48,7 @@ def str_delimiter(input_number):
 		splitted = check_overthousand(splitted);
 		return sum(splitted);
 
+#This function takes care of the case in which the user defines a delimiter of exactly 1 char like //#...
 def onechar_delimiter(input_number):
 	delimiter = input_number[2]
 	splitted = input_number[3:].split(delimiter);
@@ -51,12 +56,14 @@ def onechar_delimiter(input_number):
 		splitted = check_overthousand(splitted);
 		return sum(splitted)
 
+#This function takes care of the case in which the user defines a function 
 def normal_delimiter(input_number):
 	splitted = re.split(',|\n', input_number);
 	if check_negative(splitted) == False:
 		splitted = check_overthousand(splitted);
 		return sum(splitted)
 
+#This function takes care of the case in which the user defines various delimiters like //[###][!]...
 def various_delimiters(input_number):
 	input_number = input_number[3:];
 	del_pos = 0;
@@ -83,7 +90,7 @@ def various_delimiters(input_number):
 		splitted = check_overthousand(splitted);
 		return sum(splitted);
 
-
+#This auxiliary function checks if the array of numbers (as strings) has any negative numbers, in which case it raises an exception
 def check_negative(numbers):
 	#Checks if the string of numbers has any negative numbers
 	for number in numbers:
