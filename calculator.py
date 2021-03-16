@@ -8,6 +8,7 @@ def calculator(input_number):
 	if input_number[:2] == '//' and isnumber(input_number[3])==True:
 		return onechar_delimiter(input_number);
 
+	print(input_number[3]);
 	if input_number[:2] == '//' and input_number[3] == '[':
 		return various_delimiters(input_number);
 
